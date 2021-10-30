@@ -3,17 +3,18 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import reducer from './reducers/reducer'
+import RootApp from './RootApp'
+import screenReducer from './Actions'
+import ReduxTest from './ReduxTest'
+import store from './Actions'
+import { useSelector, useDispatch } from 'react-redux'
 
-const store = createStore(reducer)
+
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Hello World</Text>
-        <StatusBar style="auto" />
-      </View>
+      <RootApp />
     </Provider>
   );
 }
